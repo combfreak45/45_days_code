@@ -1,0 +1,27 @@
+string generate(string num){
+
+    string ans = "";
+    int i=0;
+    while(i<num.size()){
+        int count = 1;
+        while(i+1<num.size()&& num[i]==num[i+1]){
+            count++;
+            i++;
+        }
+        ans += count + '0';
+        ans += num[i];
+        i++;
+    }
+    return ans;
+}
+
+string lookAndSaySequence(int n) 
+{
+    string num = "1";
+
+    for(int i=1;i<n;i++){
+            num = generate(num);
+    }
+    return num;
+
+}
